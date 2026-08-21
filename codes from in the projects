@@ -1,0 +1,26 @@
+void setup(){
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(7,OUTPUT);
+}
+  
+  void loop(){
+    for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 9){
+    analogWrite(7, fadeValue); 
+    delay(30);    
+  }
+    digitalWrite(13,HIGH);
+   delay(1000);
+    if(digitalRead(2) == HIGH){
+    digitalWrite(12,HIGH);
+    } 
+  else{
+    digitalWrite(12,LOW);
+  }
+    for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 8) {
+    analogWrite(7, fadeValue);
+    delay(30); 
+    }
+   digitalWrite(13,LOW);
+    delay(1000);
+}
